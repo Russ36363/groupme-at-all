@@ -190,7 +190,7 @@ class AllBot {
     const message = {
       text,
       bot_id,
-      attachments: [{type: "image", url:"https://i.groupme.com/c9acfe516c50409e9f89594a98fc7594.large" }]
+      attachments: [{type: "image", url:"https://i.groupme.com/1890x919.jpeg.c9acfe516c50409e9f89594a98fc7594.large" }]
     };
 
     // Send the request
@@ -228,7 +228,7 @@ class AllBot {
     const message = {
       text,
       bot_id,
-      attachments: [{type: "image", url:"https://i.groupme.com/9284728bcd8f4d298aee19c863ad842b.large" }]
+      attachments: [{type: "image", url:"https://i.groupme.com/720x1280.jpeg.9284728bcd8f4d298aee19c863ad842b.large" }]
     };
 
     // Send the request
