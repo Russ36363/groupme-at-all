@@ -194,6 +194,10 @@ class AllBot {
   respondToLouise(res) {
     return res.send("Louise Loves You");
   }
+  
+  respondToWinston(res) {
+    return res.send("Winston Loves You");
+  }
 
   // Defines the main logic of the bot
   run() {
@@ -210,6 +214,8 @@ class AllBot {
     // Bobby and Louise
     this.robot.hear(/hey bobby/i, res => this.respondToBobby(res));
     this.robot.hear(/hey louise/i, res => this.respondToLouise(res));
+    // Winston
+    this.robot.hear(/hey winston/i, res => this.respondToWinston(res));
   }
 }
 
