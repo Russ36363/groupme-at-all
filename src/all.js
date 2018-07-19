@@ -190,7 +190,7 @@ class AllBot {
     const message = {
       text,
       bot_id,
-      attachments: [{type: "image", url:"https://i.groupme.com/360x265.gif.c6efe48e69d0485fbc3da95538f12f77.large" }]
+      attachments: [{type: "image", url:"https://i.groupme.com/1536x2048.jpeg.a739d3a617d44c8d8719722ce699110e.large" }]
     };
 
     // Send the request
