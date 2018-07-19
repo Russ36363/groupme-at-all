@@ -186,6 +186,14 @@ class AllBot {
   respondToPuppies(res) {
     return res.send("Gentle Puppies will soon be back. Relax");
   }
+  
+  respondToBobby(res) {
+    return res.send("Bobby Loves You");
+  }
+  
+  respondToLouise(res) {
+    return res.send("Louise Loves You");
+  }
 
   // Defines the main logic of the bot
   run() {
@@ -199,6 +207,9 @@ class AllBot {
     this.robot.hear(/(.*)@all(.*)/i, res => this.respondToAtAll(res));
     // Gentle Puppies
     this.robot.hear(/gentle puppies/i, res => this.respondToPuppies(res));
+    // Bobby and Louise
+    this.robot.hear(/hey bobby/i, res => this.respondToBobby(res));
+    this.robot.hear(/hey louise/i, res => this.respondToLouise(res));
   }
 }
 
