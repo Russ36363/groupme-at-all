@@ -218,7 +218,37 @@ class AllBot {
   }
   
   respondToBobby(res) {
-    return res.send("Bobby Loves You");
+    const text = "Bobby Loves You";
+
+    // The message for use in GroupMe API
+    const message = {
+      text,
+      bot_id,
+      attachments: [{type: "image", url:"https://i.groupme.com/360x640.gif.fe1835f6219645ce9f47fd443d2dcd06.large" }]
+    };
+
+    // Send the request
+    const json = JSON.stringify(message);
+    const groupmeAPIOptions = {
+      agent: false,
+      host: "api.groupme.com",
+      path: "/v3/bots/post",
+      port: 443,
+      method: "POST",
+      headers: {
+        "Content-Length": json.length,
+        "Content-Type": "application/json",
+        "X-Access-Token": token
+      }
+    };
+    const req = https.request(groupmeAPIOptions, response => {
+      let data = "";
+      response.on("data", chunk => (data += chunk));
+      response.on("end", () =>
+        console.log(`[GROUPME RESPONSE] ${response.statusCode} ${data}`)
+      );
+    });
+    req.end(json);
   }
   
   respondToLouise(res) {
