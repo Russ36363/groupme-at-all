@@ -191,21 +191,8 @@ class AllBot {
     this.robot.hear(/get name (.+)/i, res =>
       this.respondToName(res, res.match[1])
     );
-    this.robot.hear(/view( raw)* blacklist/i, res =>
-      this.respondToViewBlacklist(res)
-    );
-    this.robot.hear(/blacklist (.+)/i, res =>
-      this.respondToBlacklist(res, res.match[1])
-    );
-    this.robot.hear(/whitelist (.+)/i, res =>
-      this.respondToWhitelist(res, res.match[1])
-    );
-
     // Mention @all command
     this.robot.hear(/(.*)@all(.*)/i, res => this.respondToAtAll(res));
-
-    // Log all messages heard to status socket
-    this.robot.hear(/.+/, res => io.emit("message", res.message));
   }
 }
 
