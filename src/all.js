@@ -318,6 +318,10 @@ class AllBot {
     });
     req.end(json);
   }
+  
+  respondToFYRuss(res) {
+    return res.send("Russ is a fine fellow. Do not use his name in vain.");
+  }
 
   // Defines the main logic of the bot
   run() {
@@ -336,6 +340,8 @@ class AllBot {
     this.robot.hear(/hey louise/i, res => this.respondToLouise(res));
     // Winston
     this.robot.hear(/hey winston/i, res => this.respondToWinston(res));
+    //FYRuss
+    this.robot.hear(/fuck you russ/i, res => this.respondFYRuss(res));
   }
 }
 
