@@ -190,7 +190,7 @@ class AllBot {
     const message = {
       text,
       bot_id,
-      attachments: [{type: "image", url:"https://i.groupme.com/9284728bcd8f4d298aee19c863ad842b.large" }]
+      attachments: [{type: "image", url:"https://i.groupme.com/c9acfe516c50409e9f89594a98fc7594.large" }]
     };
 
     // Send the request
@@ -222,7 +222,37 @@ class AllBot {
   }
   
   respondToLouise(res) {
-    return res.send("Louise Loves You");
+    const text = "Louise Loves You";
+
+    // The message for use in GroupMe API
+    const message = {
+      text,
+      bot_id,
+      attachments: [{type: "image", url:"https://i.groupme.com/9284728bcd8f4d298aee19c863ad842b.large" }]
+    };
+
+    // Send the request
+    const json = JSON.stringify(message);
+    const groupmeAPIOptions = {
+      agent: false,
+      host: "api.groupme.com",
+      path: "/v3/bots/post",
+      port: 443,
+      method: "POST",
+      headers: {
+        "Content-Length": json.length,
+        "Content-Type": "application/json",
+        "X-Access-Token": token
+      }
+    };
+    const req = https.request(groupmeAPIOptions, response => {
+      let data = "";
+      response.on("data", chunk => (data += chunk));
+      response.on("end", () =>
+        console.log(`[GROUPME RESPONSE] ${response.statusCode} ${data}`)
+      );
+    });
+    req.end(json);
   }
   
   respondToWinston(res) {
