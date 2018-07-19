@@ -16,6 +16,10 @@ if (!room_id || !bot_id || !token) {
   process.exit(1);
 }
 
+// keep alive
+var http = require("http"); 
+setInterval(() => (http.get("http://your-app-name-goes-here.herokuapp.com"), 300000));
+
 class AllBot {
   constructor(robot) {
     this.robot = robot;
