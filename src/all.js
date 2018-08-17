@@ -332,7 +332,7 @@ class AllBot {
       this.respondToName(res, res.match[1])
     );
     // Mention @all command
-    this.robot.hear(/(.*)@all(.*)/i, res => this.respondToAtAll(res));
+    this.robot.hear(/(.*)@all(_yall)?(.*)/i, res => this.respondToAtAll(res));
     // Gentle Puppies
     this.robot.hear(/gentle puppies/i, res => this.respondToPuppies(res));
     // Bobby and Louise
