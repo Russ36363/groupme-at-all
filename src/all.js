@@ -328,7 +328,7 @@ class AllBot {
   }
   
   respondToRoll20(res) {
-    return res.send("https://app.roll20.net/campaigns/details/4564257/fiefdom-and-dragons");
+    return res.send("https://app.roll20.net/join/4564257/K1NsLQ");
   }
 
   // Defines the main logic of the bot
