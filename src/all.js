@@ -328,7 +328,7 @@ class AllBot {
   }
   
   respondToRoll20(res) {
-    return res.send("");
+    return res.send("https://app.roll20.net/campaigns/details/4564257/fiefdom-and-dragons");
   }
 
   // Defines the main logic of the bot
@@ -353,7 +353,7 @@ class AllBot {
     //Dorkdrive
     this.robot.hear(/!dorkdrive/i, res => this.respondToDorkDrive(res));
     //Roll20
-    this.robot.hear(/!dorkdrive/i, res => this.respondToRoll20(res));
+    this.robot.hear(/!roll20/i, res => this.respondToRoll20(res));
   }
 }
 
