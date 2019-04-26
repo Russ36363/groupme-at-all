@@ -322,6 +322,14 @@ class AllBot {
   respondToFYRuss(res) {
     return res.send("Russ is a fine fellow. Do not use his name in vain.");
   }
+  
+  respondToDorkDrive(res) {
+    return res.send("Dork Drive: https://drive.google.com/drive/folders/11l-ZTZ0is9L6yNUyEB623TA8oEYMNupd");
+  }
+  
+  respondToRoll20(res) {
+    return res.send("");
+  }
 
   // Defines the main logic of the bot
   run() {
@@ -342,6 +350,10 @@ class AllBot {
     this.robot.hear(/hey winston/i, res => this.respondToWinston(res));
     //FYRuss
     this.robot.hear(/fuck you russ/i, res => this.respondFYRuss(res));
+    //Dorkdrive
+    this.robot.hear(/!dorkdrive/i, res => this.respondToDorkDrive(res));
+    //Roll20
+    this.robot.hear(/!dorkdrive/i, res => this.respondToRoll20(res));
   }
 }
 
